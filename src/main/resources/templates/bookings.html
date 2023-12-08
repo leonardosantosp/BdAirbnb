@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{main.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Airbnb - Booking</title>
+</head>
+<body>
+<header>
+    <a href="home.html">
+        <div class="menuButton">
+            <img th:src="@{R.png}" alt="Logo">
+            <span>bnb</span>
+        </div>
+    </a>
+    <h1 class="newUserHead">All Booking in the Airbnb</h1>
+</header>
+<main>
+    <table class="tent1">
+        <tr>
+            <th>#</th>
+            <th>ArrivalDate</th>
+            <th>DepartureDate</th>
+            <th>Npeople</th>
+            <th>Guest Id</th>
+            <th>Id PlaceToBook</th>
+
+        </tr>
+        <tr th:each="booking : ${bookings}" style="color: black"> <!-- O each serve para mostrar todos os hosts-->
+            <td><span th:text="${booking.idBooking}"></span></td>
+            <td><span th:text="${booking.arrivalDate}"></span></td>
+            <td><span th:text="${booking.departureDate}"></span></td>
+            <td><span th:text="${booking.nPeople}"></span></td>
+            <td><span th:text="${booking.guest.idGuest}"></span></td>
+            <td><span th:text="${booking.placeToBook.idPlaceToBook}"></span></td>
+        </tr>
+    </table>
+</main>
+</body>
+</html>

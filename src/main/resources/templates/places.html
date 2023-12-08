@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{main.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Airbnb - Places</title>
+</head>
+<body>
+<header>
+    <a href="reports.html">
+        <div class="menuButton">
+            <img th:src="@{R.png}" alt="Logo">
+            <span>bnb</span>
+        </div>
+    </a>
+    <h1 class="newUserHead">All places in the Airbnb</h1>
+</header>
+<main>
+    <table class="placeTables">
+        <tr>
+            <th>#</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Address</th>
+            <th>City</th>
+        </tr>
+        <tr th:each="place : ${places}" style="color: black"> <!-- O each serve para mostrar todos os places-->
+            <td><span th:text="${place.idPlace}"></span></td>
+            <td><span th:text="${place.state}"></span></td>
+            <td><span th:text="${place.country}"></span></td>
+            <td><span th:text="${place.address}"></span></td>
+            <td><span th:text="${place.city}"></span></td>
+        </tr>
+    </table>
+</main>
+</body>
+</html>

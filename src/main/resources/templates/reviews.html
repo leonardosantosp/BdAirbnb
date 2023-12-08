@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{main.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Airbnb - Review</title>
+</head>
+<body>
+<header>
+    <a href="reports.html">
+        <div class="menuButton">
+            <img th:src="@{R.png}" alt="Logo">
+            <span>bnb</span>
+        </div>
+    </a>
+    <h1 class="newUserHead">All Review in the Airbnb</h1>
+</header>
+<main>
+    <table class="reviewsTable">
+        <tr>
+            <th>#</th>
+            <th>ReviewValue</th>
+            <th>textReview</th>
+            <th>Guest Id</th>
+            <th>Guest name</th>
+            <th>Id PlaceToBook</th>
+            <th>Host Name</th>
+        </tr>
+        <tr th:each="review : ${reviews}" style="color: black"> <!-- O each serve para mostrar todos os hosts-->
+            <td><span th:text="${review.idReview}"></span></td>
+            <td><span th:text="${review.reviewValue}"></span></td>
+            <td><span th:text="${review.textReview}"></span></td>
+            <td><span th:text="${review.guest.idGuest}"></span></td>
+            <td><span th:text="${review.guest.user.name}"></span></td>
+            <td><span th:text="${review.placeToBook.idPlaceToBook}"></span></td>
+            <td><span th:text="${review.placeToBook.host.user.name}"></span></td>
+            <td><a th:href="@{'/deletereview/' + ${review.idReview}}">Delete</a></td>
+            <td><a th:href="@{'/editreview/' + ${review.idReview}}">Edit</a></td>
+
+        </tr>
+    </table>
+</main>
+</body>
+</html>

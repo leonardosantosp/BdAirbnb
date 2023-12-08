@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link th:href="@{main.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AirBnb</title>
+</head>
+
+<body class="logBody">
+<a>
+    <div class="logo-container">
+        <img th:src="@{R.png}" alt="Logo">
+        <span>bnb</span>
+    </div>
+</a>
+<main>
+
+    <div>
+        <h1>AirBnb</h1>
+    </div>
+    <div class="containerLogin">
+        <div>
+            <div>
+                <form action="/home" method="post">
+                    <div>
+                        <label id="userId-label" for="idUser">Email:</label>
+                        <input type="text" id="idUser" name="email" required>
+                    </div>
+                    <div>
+                        <label id="password-label" for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit">Login</button>
+                    <div id="error-message"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+<footer></footer>
+</body>
+</html>

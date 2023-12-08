@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User</title>
+</head>
+<body>
+<header>
+    <h1>Edit User</h1>
+</header>
+<main>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Address</th>
+            <th>City</th>
+        </tr>
+        <tr th:object="${place}" >
+            <td><span th:text="${place.idPlace}"></span></td>
+            <td><span th:text="${place.state}"></span></td>
+            <td><span th:text="${place.country}"></span></td>
+            <td><span th:text="${place.address}"></span></td>
+            <td><span th:text="${place.city}"></span></td>
+        </tr>
+    </table>
+    <form th:action="@{'/editplace/' + ${place.idPlace}}" th:object="${place}" method="post">
+        <label>
+            State:
+            <input type="text" id="state" th:field="*{state}"/>
+        </label>
+        <br/>
+        <label>
+            Country:
+            <input type="text" id="country" th:field="*{country}"/>
+        </label>
+        <br/>
+        <label>
+            Address:
+            <input type="text" id="address" th:field="*{address}"/>
+        </label>
+        <br/>
+        <label>
+            City:
+            <input type="text" id="city" th:field="*{city}"/>
+        </label>
+        <br/>
+        <button>Editar</button>
+    </form>
+</main>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User</title>
+</head>
+<body>
+<header>
+    <h1>Edit User</h1>
+</header>
+<main>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>PhoneNumber</th>
+        </tr>
+        <tr th:object="${user}" >
+            <td><span th:text="${user.idUser}"></span></td>
+            <td><span th:text="${user.name}"></span></td>
+            <td><span th:text="${user.email}"></span></td>
+            <td><span th:text="${user.password}"></span></td>
+            <td><span th:text="${user.phoneNumber}"></span></td>
+        </tr>
+    </table>
+    <form th:action="@{'/edituser/' + ${user.idUser}}" th:object="${user}" method="post">
+        <label>
+            Name:
+            <input type="text" id="name" th:field="*{name}"/>
+        </label>
+        <br/>
+        <label>
+            Email:
+            <input type="text" id="email" th:field="*{email}"/>
+        </label>
+        <br/>
+        <label>
+            Phone:
+            <input type="text" id="password" th:field="*{password}"/>
+        </label>
+        <br/>
+        <label>
+            WebSite:
+            <input type="text" id="phoneNumber" th:field="*{phoneNumber}"/>
+        </label>
+        <br/>
+        <button>Editar</button>
+    </form>
+</main>
+</body>
+</html>

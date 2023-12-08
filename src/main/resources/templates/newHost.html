@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{main.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Add a new host</title>
+</head>
+<body>
+<header>
+    <a href="home.html">
+        <div class="menuButton">
+            <img th:src="@{R.png}" alt="Logo">
+            <span>bnb</span>
+        </div>
+    </a>
+    <h1 class="newUserHead">New Host</h1>
+</header>
+
+<main class="containerNewHost">
+    <form th:action="@{/host}" th:object="${host}" method="post">
+        <label for="user">
+            User Id:
+        </label>
+        <select id="user" name="user" required>
+            <option th:each="user : ${users}" th:value="${user.idUser}" th:text="${user.name + ' (' + user.email + ' - ' + user.phoneNumber + ')'}"></option>
+        </select>
+        <button class="registerButton">Register</button>
+    </form>
+</main>
+
+<footer></footer>
+</body>
+</html>

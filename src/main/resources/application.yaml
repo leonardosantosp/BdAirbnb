@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: airbnb
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.1.254:3306/db2022108018
+    username: user2022108018
+    password: 2022108018

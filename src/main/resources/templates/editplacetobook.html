@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User</title>
+</head>
+<body>
+<header>
+    <h1>Edit Place To Book</h1>
+</header>
+<main>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Capacity</th>
+            <th>MeanReview</th>
+            <th>NRooms</th>
+            <th>NBathroom</th>
+            <th>Price</th>
+            <th>NKitchen</th>
+            <th>NLivingRooms</th>
+            <th>ReservationStatus</th>
+            <th>Host id</th>
+            <th>Place id</th>
+            <th>Name</th>
+        </tr>
+        <tr th:object="${placeToBook}" >
+            <td><span th:text="${placeToBook.idPlaceToBook}"></span></td>
+            <td><span th:text="${placeToBook.capacity}"></span></td>
+            <td><span th:text="${placeToBook.meanReview}"></span></td>
+            <td><span th:text="${placeToBook.NRooms}"></span></td>
+            <td><span th:text="${placeToBook.NBathroom}"></span></td>
+            <td><span th:text="${placeToBook.price}"></span></td>
+            <td><span th:text="${placeToBook.NKitchen}"></span></td>
+            <td><span th:text="${placeToBook.NLivingRooms}"></span></td>
+            <td><span th:text="${placeToBook.reservationStatus}"></span></td>
+            <td><span th:text="${placeToBook.host.idHost}"></span></td>
+            <td><span th:text="${placeToBook.place.idPlace}"></span></td>
+            <td><span th:text="${placeToBook.host.user.name}"></span></td>
+        </tr>
+    </table>
+    <form th:action="@{'/editplacetobook/' + ${placeToBook.idPlaceToBook}}" th:object="${placeToBook}" method="post">
+        <label>
+            Capacity:
+            <input type="number" id="capacity" th:field="*{capacity}"/>
+        </label>
+        <br/>
+        <label>
+            NRooms:
+            <input type="number" id="NRooms" th:field="*{NRooms}"/>
+        </label>
+        <br/>
+        <label>
+            NBathroom:
+            <input type="number" id="NBathroom" th:field="*{NBathroom}"/>
+        </label>
+        <br/>
+        <label>
+            NKitchen:
+            <input type="number" id="NKitchen" th:field="*{NKitchen}"/>
+        </label>
+        <br/>
+        <label>
+            NLivingRooms:
+            <input type="number" id="NLivingRooms" th:field="*{NLivingRooms}"/>
+        </label>
+        <br/>
+        <label>
+            Price:
+            <input type="number" id="price" th:field="*{price}"/>
+        </label>
+        <br/>
+
+        <button>Editar</button>
+    </form>
+</main>
+</body>
+</html>
+

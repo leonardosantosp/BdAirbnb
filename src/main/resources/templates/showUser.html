@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show User</title>
+</head>
+<body>
+<header>
+    <h1>Show User</h1>
+</header>
+<main>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>PhoneNumber</th>
+        </tr>
+        <tr th:object="${user}" >
+            <td><span th:text="${user.idUser}"></span></td>
+            <td><span th:text="${user.name}"></span></td>
+            <td><span th:text="${user.email}"></span></td>
+            <td><span th:text="${user.password}"></span></td>
+            <td><span th:text="${user.phoneNumber}"></span></td>
+        </tr>
+    </table>
+</main>
+</body>
+</html>

@@ -1,0 +1,919 @@
+body{
+    overflow-x: hidden;
+    font-family: 'Hedvig Letters Sans', sans-serif;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1753ED;
+    height: 70px;
+}
+
+.containerNewHost{
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    width: 300px;
+    text-align: center;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form2{
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    width: 300px;
+    text-align: center;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tenttt1{
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    width: 300px;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tent6{
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    width: 300px;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.tent7{
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    width: 300px;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.logBody{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.containerLogin{
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    width: 300px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+button {
+    background-color: #1753ED;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2078ae;
+}
+
+.signup {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup p {
+    margin-bottom: 8px;
+}
+
+.menuButton{
+    position: fixed;
+    top: 0;
+    left: 22%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.menuButton img {
+    max-width: 15%;
+}
+.menuButton span {
+    font-weight: bold;
+    color: #1753ED;
+    font-size: 30px;
+    margin-left: -5px;
+}
+
+.logo-container{
+    position: fixed;
+    top: 0;
+    left: 63%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.logo-container img {
+    max-width: 15%;
+}
+
+.logo-container span {
+    font-weight: bold;
+    color: #1753ED;
+    font-size: 30px;
+    margin-left: -5px;
+}
+
+.homeButtons a{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.homeButtons a:active {
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.8);
+}
+
+.titleDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.createUserButton{
+    background-color: #1753ED;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    top: 20%;
+    left: 20%;
+    width: 350px;
+    height: 100px;
+}
+
+.createGuestButton{
+    background-color: #1753ED;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    top: 20%;
+    left: 50%;
+    width: 350px;
+    height: 100px;
+}
+
+.createHostButton{
+    background-color: #1753ED;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    top: 20%;
+    left: 80%;
+    width: 350px;
+    height: 100px;
+}
+
+.createPlaceToBook{
+    background-color: #1753ED;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 44px;
+    top: 50%;
+    left: 20%;
+    width: 350px;
+    height: 101px;
+}
+
+.createPlaceButton{
+    background-color: #1753ED;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    height: 100px;
+}
+
+.reportButton{
+    background-color: #1753ED;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 64px;
+    top: 50%;
+    left: 80%;
+    width: 350px;
+    height: 100px;
+}
+
+.createBookButton{
+    background-color: #1753ED;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 64px;
+    top: 80%;
+    left: 35%;
+    width: 350px;
+    height: 100px;
+}
+
+.createReviewButton{
+    background-color: #1753ED;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 64px;
+    top: 80%;
+    left: 65%;
+    width: 350px;
+    height: 100px;
+}
+
+
+.loginButton {
+    background-color: #1753ED;
+    color: black;
+    position: absolute;
+    top: 3%;
+    left: 98.5%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.siteName{
+    background-color: #1753ED;
+    height: 40px;
+    border-radius: 5px;
+    width: 96px;
+}
+
+.secondPartName{
+    position: relative;
+    left: 35px;
+    top: -55px;
+}
+
+.containerPlaceToBook{
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    width: 1000px;
+    height: 300px;
+    text-align: center;
+    position: fixed;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.containerNewUser{
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    width: 600px;
+    height: 500px;
+    text-align: center;
+    position: fixed;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.containerSearchPlaceToBook{
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.containerNewPlace{
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    position: fixed;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.placeLabel{
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    padding: 30px;
+}
+
+.placeSelect{
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    padding: 5px;
+}
+
+.capacityLabel{
+    position: absolute;
+    top: 35%;
+    left: 12.5%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    padding: 30px;
+}
+
+.capacityInput{
+    position: absolute;
+    top: 55%;
+    left: 132%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    padding: 5px;
+}
+
+.nRoomsLabel{
+    position: absolute;
+    top: 55%;
+    left: 12.5%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    padding: 30px;
+}
+
+.nRoomsInput{
+    position: absolute;
+    top: 55%;
+    left: 132%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    padding: 5px;
+}
+
+.nBathLabel{
+    position: absolute;
+    top: 75%;
+    left: 14.5%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    padding: 30px;
+}
+
+.nBathInput{
+    position: absolute;
+    top: 55%;
+    left: 132%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    padding: 5px;
+}
+
+.priceLabel{
+    position: absolute;
+    top: 15%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    padding: 30px;
+}
+
+.priceInput{
+    position: absolute;
+    top: 55%;
+    left: 145%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    padding: 5px;
+}
+
+.nKitchenLabel{
+    position: absolute;
+    top: 35%;
+    left: 63.5%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    padding: 30px;
+}
+
+.nKitchenInput{
+    position: absolute;
+    top: 55%;
+    left: 130%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    padding: 5px;
+}
+
+.hostLabel{
+    position: absolute;
+    top: 55%;
+    left: 59.5%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    padding: 30px;
+}
+
+.hostInput{
+    position: absolute;
+    top: 55.5%;
+    left: 67%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    padding: 5px;
+}
+
+.nLivingLabel{
+    position: absolute;
+    top: 75%;
+    left: 68.1%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    padding: 30px;
+}
+
+.nLivingInput{
+    position: absolute;
+    top: 53%;
+    left: 119%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    padding: 5px;
+    width: 150px;
+}
+
+
+
+.nameLabel{
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    padding: 30px;
+}
+
+.nameInput{
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    left: 185%;
+    transform: translate(-50%, -50%);
+    width: 365px;
+    height: 30px;
+}
+
+.phoneLabel{
+    position: absolute;
+    top: 55%;
+    left: 34.5%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+}
+
+.phoneInput{
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    left: 133%;
+    transform: translate(-50%, -50%);
+    width: 185px;
+    height: 30px;
+}
+
+.emailLabel{
+    position: absolute;
+    top: 35%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+}
+
+.emailInput{
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    left: 258%;
+    transform: translate(-50%, -50%);
+    width: 360px;
+    height: 30px;
+}
+
+.passwordLabel{
+    position: absolute;
+    top: 75%;
+    left: 25.5%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+}
+
+.passwordInput{
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    left: 182%;
+    transform: translate(-50%, -50%);
+    width: 283px;
+    height: 30px;
+}
+
+.registerButton{
+    position: absolute;
+    height: 50px;
+    width: 150px;
+    transform: translate(-50%, -50%);
+    top: 70%;
+    left: 50%;
+    font-size: 20px;
+    background-color: #1753ED;
+    border-radius: 5px;
+    box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.5);
+    border: none;
+}
+
+.registerButton:active{
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.8);
+}
+
+.newUserHead{
+    text-align: center;
+    color: #1753ED;
+}
+
+
+.userIdDiv {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+}
+
+.userIdSelect{
+    position: relative;
+    top: -3px;
+    height: 20px;
+    width: 30px;
+}
+
+.usersTable {
+    color: #ffffff;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.usersTable th, .usersTable td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.usersTable th {
+    background-color: #1753ED;
+}
+
+.placeTables{
+    color: #ffffff;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.placeTables th, .placeTables td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.placeTables th {
+    background-color: #1753ED;
+}
+
+.placesToBookTable{
+    color: #ffffff;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.placesToBookTable th, .placesToBookTable td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.placesToBookTable th {
+    background-color: #1753ED;
+}
+
+.hostsTable{
+    color: #ffffff;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.hostsTable th, .hostsTable td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.hostsTable th {
+    background-color: #1753ED;
+}
+
+.reviewsTable{
+    color: #ffffff;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.reviewsTable th, .reviewsTable td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.reviewsTable th {
+    background-color: #1753ED;
+}
+
+.guestsTable{
+    color: #ffffff;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.guestsTable th, .guestsTable td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.guestsTable th {
+    background-color: #1753ED;
+}
+
+.searchPlaceToBook{
+    color: #ffffff;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 370px;
+    border-radius: 10px;
+}
+
+.searchPlaceToBook th, .searchPlaceToBook td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.searchPlaceToBook th {
+    background-color: #1753ED;
+}
+
+.searchPlaceToBookText{
+    margin-top: 20px;
+    text-align: center;
+    color: #1753ED;
+}
+
+
+.findPlacesToBookButton{
+    background-color: #1753ED;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    top: 35%;
+    left: 20%;
+    width: 350px;
+    height: 100px;
+}
+
+.findUserButton {
+    background-color: #1753ED;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    top: 35%;
+    left: 50%;
+    width: 350px;
+    height: 100px;
+}
+
+.findPlacesButton{
+    background-color: #1753ED;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    top: 35%;
+    left: 80%;
+    width: 350px;
+    height: 100px;
+}
+
+.findHostsButton{
+    background-color: #1753ED;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 64px;
+    top: 65%;
+    left: 80%;
+    width: 350px;
+    height: 100px;
+}
+
+.reservedPlace{
+    background-color: #1753ED;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    top: 75%;
+    left: 20%;
+    width: 350px;
+    height: 100px;
+}
+
+.consulta2{
+
+    background-color: #1753ED;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 120px;
+    top: 75%;
+    left: 20%;
+    width: 350px;
+    height: 100px;
+}
+
+.consulta3{
+    background-color: #1753ED;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    top: 75%;
+    left: 50%;
+    width: 350px;
+    height: 100px;
+}
+
+.consulta4{
+    background-color: #1753ED;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    top: 75%;
+    left: 80%;
+    width: 350px;
+    height: 100px;
+}
+
+.orderPlaceToDesc{
+    color: #ffffff;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.orderPlaceToDesc th, .orderPlaceToDesc td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.orderPlaceToDesc th {
+    background-color: #1753ED;
+}
+
+.tent1{
+    color: #ffffff;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.tent1 th, .tent1 td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tent1 th {
+    background-color: #1753ED;
+}
+
+.tableReview{
+    color: #ffffff;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.tableReview th, .tableReview td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tableReview th {
+    background-color: #1753ED;
+}

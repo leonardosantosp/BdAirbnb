@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{main.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Airbnb - Users</title>
+</head>
+<body>
+<header>
+    <a href="reports.html">
+        <div class="menuButton">
+            <img th:src="@{R.png}" alt="Logo">
+            <span>bnb</span>
+        </div>
+    </a>
+    <h1 class="newUserHead">All users in the Airbnb</h1>
+</header>
+<main class="containerUserTable">
+    <table class="usersTable">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>PhoneNumber</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+        <tr th:each="user : ${users}" style="color: black"> <!-- O each serve para mostrar todos os users-->
+            <td><span th:text="${user.idUser}"></span></td>
+            <td><span th:text="${user.name}"></span></td>
+            <td><span th:text="${user.phoneNumber}"></span></td>
+            <td><span th:text="${user.email}"></span></td>
+            <td><span th:text="${user.password}"></span></td>
+        </tr>
+    </table>
+</main>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{main.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Search</title>
+</head>
+<body>
+<a href="reports.html">
+    <div class="menuButton">
+        <img th:src="@{R.png}" alt="Logo">
+        <span>bnb</span>
+    </div>
+</a>
+
+<h1 class="newUserHead">Place Search</h1>
+
+<!-- Formulário de busca -->
+<form class="containerSearchPlaceToBook" action="/searchplace" method="get">
+    <label for="state">State:</label>
+    <input type="text" id="state" name="state">
+
+    <label for="country">Country:</label>
+    <input type="text" id="country" name="country">
+
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city">
+
+    <button type="submit">Search</button>
+</form>
+
+<!-- Resultados da busca -->
+<h2>Search Results</h2>
+
+<th:block th:if="${not #lists.isEmpty(place)}">
+    <table class="searchPlaceToBook">
+        <thead>
+        <tr>
+            <th>Place ID</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Address</th>
+            <th>City</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Itera sobre a lista de places e exibe as informações -->
+        <tr th:each="p : ${place}" style="color: black">
+            <td th:text="${p.idPlace}"></td>
+            <td th:text="${p.state}"></td>
+            <td th:text="${p.country}"></td>
+            <td th:text="${p.address}"></td>
+            <td th:text="${p.city}"></td>
+        </tr>
+        </tbody>
+    </table>
+</th:block>
+
+<!-- Se a lista de places estiver vazia, exibe uma mensagem -->
+<div th:if="${#lists.isEmpty(place)}">
+    <p>No places found.</p>
+</div>
+
+</body>
+</html>

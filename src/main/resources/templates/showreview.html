@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Review</title>
+</head>
+<body>
+<header>
+    <h1>Show Review</h1>
+</header>
+<main>
+    <table>
+        <tr>
+            <th>Id Review</th>
+            <th>Review Value</th>
+            <th>Text Review</th>
+            <th>IdPlaceToBook</th>
+            <th>IdGuest</th>
+        </tr>
+        <tr th:object="${review}" >
+            <td><span th:text="${review.idReview}"></span></td>
+            <td><span th:text="${review.reviewValue}"></span></td>
+            <td><span th:text="${review.textReview}"></span></td>
+            <td><span th:text="${review.placeToBook.idPlaceToBook}"></span></td>
+            <td><span th:text="${review.guest.idGuest}"></span></td>
+        </tr>
+    </table>
+</main>
+</body>
+</html>

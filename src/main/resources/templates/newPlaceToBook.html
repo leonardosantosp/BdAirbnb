@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{main.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Add a new placeToBook</title>
+</head>
+<body>
+<header>
+    <a href="home.html">
+        <div class="menuButton">
+            <img th:src="@{R.png}" alt="Logo">
+            <span>bnb</span>
+        </div>
+    </a>
+    <h1 class="newUserHead">New place to book</h1>
+</header>
+
+<main class="containerPlaceToBook">
+    <form th:action="@{/placetobook}" th:object="${placeToBook}" method="post">
+
+        <label class="placeLabel" for="place">
+            Place:
+        </label>
+        <select class="placeSelect" id="place" name="place" required>
+            <option th:each="place : ${places}" th:value="${place.idPlace}" th:text="${place.state + ' (' + place.country + ' - ' + place.address + ' - ' + place.city + ')'}"></option>
+        </select>
+        <br/>
+
+        <label class="capacityLabel">
+            Capacity:
+            <input class="capacityInput" type="number" id="capacity" th:field="*{capacity}"/>
+        </label>
+        <br/>
+
+        <label class="nRoomsLabel">
+            NRooms:
+            <input class="nRoomsInput" type="number" id="nRooms" th:field="*{nRooms}"/>
+        </label>
+        <br/>
+
+        <label class="nBathLabel">
+            NBathroom:
+            <input class="nBathInput" type="number" id="nBathroom" th:field="*{nBathroom}"/>
+        </label>
+        <br/>
+
+        <label class="priceLabel">
+            Price:
+            <input class="priceInput" type="number" id="price" th:field="*{price}"/>
+        </label>
+        <br/>
+
+        <label class="nKitchenLabel">
+            NKitchen:
+            <input class="nKitchenInput" type="number" id="nKitchen" th:field="*{nKitchen}"/>
+        </label>
+        <br/>
+
+        <label for="host" class="hostLabel">
+            Host:
+        </label>
+        <select class="hostInput" id="host" name="host" required>
+            <option th:each="host : ${hosts}" th:value="${host.idHost}" th:text="${host.nPlaceToBook + ' (' + host.availabilityStatus + ' - ' + host.averageRating + host.user.name + host.idHost + ')'}"></option>
+        </select>
+        <br/>
+
+        <label class="nLivingLabel">
+            NLivingRooms:
+            <input class="nLivingInput" type="number" id="nLivingRooms" th:field="*{nLivingRooms}"/>
+        </label>
+        <br/>
+        <button class="registerButton">Register</button>
+    </form>
+</main>
+
+<footer></footer>
+</body>
+</html>

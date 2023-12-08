@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link th:href="@{main.css}" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <title>Add a new place</title>
+</head>
+<body>
+<header>
+  <a href="home.html">
+    <div class="menuButton">
+      <img th:src="@{R.png}" alt="Logo">
+      <span>bnb</span>
+    </div>
+  </a>
+  <h1 class="newUserHead">New Place</h1>
+</header>
+
+<main class="containerNewPlace">
+  <form th:action="@{/place}" th:object="${place}" method="post">
+    <label>
+      State:
+      <input type="text" id="state" th:field="*{state}"/>
+    </label>
+    <br/>
+    <label>
+      Country:
+      <input type="text" id="country" th:field="*{country}"/>
+    </label>
+    <br/>
+    <label>
+      Address:
+      <input type="text" id="address" th:field="*{address}"/>
+    </label>
+    <br/>
+    <label>
+      City:
+      <input type="text" id="city" th:field="*{city}"/>
+    </label>
+    <br/>
+    <button>Register</button>
+  </form>
+</main>
+
+<footer></footer>
+</body>
+</html>

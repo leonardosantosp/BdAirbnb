@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{main.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Reports</title>
+</head>
+<body>
+<header>
+    <a th:href="home.html">
+        <div class="menuButton">
+            <img th:src="@{R.png}" alt="Logo">
+            <span>bnb</span>
+        </div>
+    </a>
+    <h1 class="newUserHead">Reports</h1>
+</header>
+<main>
+    <div class="homeButtons">
+<!--        <a class="createGuestButton" href = "users.html">Users table</a>-->
+        <a class="createGuestButton" th:href="@{'/users'}">Users table</a>
+<!--        <a class="createHostButton" href = "places.html" style="font-size: 50px">Places table</a>-->
+        <a class="createHostButton" th:href="@{'/places'}">Places table</a>
+<!--        <a class="createUserButton" href = "placetobooks.html" style="font-size: 50px">Places to Book table</a>-->
+        <a class="createUserButton" th:href="@{'/placetobooks'}">Places to Book table</a>
+<!--        <a class="reportButton" href ="hosts.html" style="font-size: 50px">Hosts table</a>-->
+        <a class="reportButton" th:href="@{'/hosts'}">Hosts table</a>
+<!--        <a class="createPlaceButton" href ="guests.html" style="font-size: 50px">Guests table</a>-->
+        <a class="createPlaceButton" th:href="@{'/hosts'}">Guests table</a>
+<!--        <a class="createPlaceToBook" href ="reviews.html">Review table</a>-->
+        <a class="createPlaceToBook" th:href="@{'/reviews'}">Review table</a>
+<!--        <a class="findPlacesButton" href ="searchPlace.html" style="font-size: 45px">Search places</a>-->
+        <a class="findPlacesButton" th:href="@{'/searchplace'}">Search places</a>
+<!--        <a class="findUserButton" href ="searchUser.html" style="font-size: 45px">Search users</a>-->
+        <a class="findUserButton" th:href="@{'/searchuser'}">Search users</a>
+<!--        <a class="findPlacesToBookButton" href ="searchPlaceToBook.html" style="font-size: 45px">Search places to book</a>-->
+        <a class="findPlacesToBookButton" th:href="@{'/searchplacetobook'}">Search places to book</a>
+        <a class="reservedPlace" th:href ="@{'/reserved-places'}">Select by place to book</a>
+<!--        <a class="consulta2" th:href ="@{'/placetobook/order'}">Order place to book</a>-->
+        <a class="consulta3" th:href ="@{'/placetobook/descorder'}">Descendent place to book</a>
+        <a class="consulta4" th:href ="@{'/placetobook/ascorder'}">Ascendant place to book</a>
+
+
+    </div>
+
+</main>
+<footer></footer>
+</body>
+</html>

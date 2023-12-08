@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{main.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Add a new Review</title>
+</head>
+<body>
+<header>
+    <a href="reports.html">
+        <div class="menuButton">
+            <img th:src="@{R.png}" alt="Logo">
+            <span>bnb</span>
+        </div>
+    </a>
+    <h1 class="newUserHead">New Review</h1>
+</header>
+
+<main class="tent4">
+    <form th:action="@{/review}" th:object="${review}" method="post">
+
+        <label>
+            Review Value:
+            <input type="number" id="reviewValue" th:field="*{reviewValue}"/>
+        </label>
+        <br/>
+
+        <label>
+            Text Review:
+            <input type="text" id="textReview" th:field="*{textReview}"/>
+        </label>
+        <br/>
+
+        <label for="guest">
+            Guest:
+        </label>
+        <select id="guest" name="guest" required>
+            <option th:each="guest : ${guests}" th:value="${guest.idGuest}" th:text="${guest.bookingStatus + ' (' + guest.user.name + ' - ' + guest.user.email + ')'}"></option>
+        </select>
+        <br/>
+
+        <label for="placeToBook">
+            PlaceToBook:
+        </label>
+        <select id="placeToBook" name="placeToBook" required>
+            <option th:each="placeToBook : ${placeToBooks}" th:value="${placeToBook.idPlaceToBook}" th:text="${placeToBook.capacity + ' (' + placeToBook.meanReview + ' - ' + placeToBook.nRooms + placeToBook.nBathroom + placeToBook.price + placeToBook.nKitchen + placeToBook.nLivingRooms + placeToBook.reservationStatus + ')'}"></option>
+        </select>
+        <br/>
+
+        <button>Register</button>
+    </form>
+</main>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>PlaceToBooks</title>
+</head>
+<body>
+<h2>Lista de Lugares para Reservar: Ordenado por preço</h2>
+<h4>Do menor para o maior</h4>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Capacity</th>
+        <th>MeanReview</th>
+        <th>NRooms</th>
+        <th>NBathroom</th>
+        <th>Price</th>
+        <th>NKitchen</th>
+        <th>NLivingRooms</th>
+        <th>ReservationStatus</th>
+        <th>Host id</th>
+        <th>Place id</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="placeToBook : ${placeToBooks}">
+        <td><span th:text="${placeToBook.idPlaceToBook}"></span></td>
+        <td><span th:text="${placeToBook.capacity}"></span></td>
+        <td><span th:text="${placeToBook.meanReview}"></span></td>
+        <td><span th:text="${placeToBook.NRooms}"></span></td>
+        <td><span th:text="${placeToBook.NBathroom}"></span></td>
+        <td><span th:text="${placeToBook.price}"></span></td>
+        <td><span th:text="${placeToBook.NKitchen}"></span></td>
+        <td><span th:text="${placeToBook.NLivingRooms}"></span></td>
+        <td><span th:text="${placeToBook.reservationStatus}"></span></td>
+        <td><span th:text="${placeToBook.host.idHost}"></span></td>
+        <td><span th:text="${placeToBook.place.idPlace}"></span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

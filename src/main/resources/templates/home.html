@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{main.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+<header>
+    <main>
+        <a>
+            <div class="logo-container">
+                <img th:src="@{R.png}" alt="Logo">
+                <span>bnb</span>
+            </div>
+        </a>
+        <div class="homeButtons">
+<!--            <a class="createGuestButton" href = "newGuest.html">New guest</a>-->
+            <a class="createGuestButton" th:href="@{'/guest'}">New guest</a>
+
+<!--            <a class="createHostButton" href = "newHost.html">New host</a>-->
+            <a class="createHostButton" th:href="@{'/host'}">New host</a>
+<!--            <a class="createPlaceToBook" href = "newPlaceToBook.html">New place to book</a>-->
+            <a class="createPlaceToBook" th:href="@{'/placetobook'}">New place to book</a>
+            <a class="reportButton" th:href ="@{'/reports'}">Reports</a>
+            <a class="createUserButton" th:href="@{'/user'}">New user</a>
+<!--            <a class="createPlaceButton" href = "newPlace.html">New place</a>-->
+            <a class="createPlaceButton" th:href="@{'/place'}">New place</a>
+<!--            <a class="createBookButton" href = "" >New Book</a>-->
+            <a class="createBookButton" th:href="@{'/booking'}">New Book</a>
+<!--            <a class="createReviewButton" href = "" >Review</a>-->
+            <a class="createReviewButton" th:href="@{'/review'}">Review</a>
+        </div>
+    </main>
+</header>
+
+<footer></footer>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{main.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlaceToBook Search</title>
+</head>
+<body>
+<a href="reports.html">
+    <div class="menuButton">
+        <img th:src="@{R.png}" alt="Logo">
+        <span>bnb</span>
+    </div>
+</a>
+
+<h1 class="newUserHead">Search by numbers of: Room, Bathroom, Kitchen and Living room</h1>
+
+<!-- Formulário de busca -->
+<form class="containerSearchPlaceToBook" action="/searchplacetobook" method="get">
+    <label for="nRooms">nRooms:</label>
+    <input type="number" id="nRooms" name="nRooms">
+
+    <label for="nBathroom">nBathroom:</label>
+    <input type="number" id="nBathroom" name="nBathroom">
+
+    <label for="nKitchen">nKitchen:</label>
+    <input type="number" id="nKitchen" name="nKitchen">
+
+    <label for="nLivingRooms">nLivingRooms:</label>
+    <input type="number" id="nLivingRooms" name="nLivingRooms">
+
+    <button type="submit">Search</button>
+</form>
+
+<!-- Resultados da busca -->
+<h2 class="searchPlaceToBookText">Search Results</h2>
+
+<th:block th:if="${not #lists.isEmpty(placeToBooks)}">
+    <table class="searchPlaceToBook">
+        <tr>
+            <th>#</th>
+            <th>Capacity</th>
+            <th>MeanReview</th>
+            <th>NRooms</th>
+            <th>NBathroom</th>
+            <th>Price</th>
+            <th>NKitchen</th>
+            <th>NLivingRooms</th>
+            <th>ReservationStatus</th>
+            <th>Host id</th>
+            <th>Place id</th>
+        </tr>
+        <tr th:each="placeToBook : ${placeToBooks}" style="color: black"> <!-- O each serve para mostrar todos os hosts-->
+            <td><span th:text="${placeToBook.idPlaceToBook}"></span></td>
+            <td><span th:text="${placeToBook.capacity}"></span></td>
+            <td><span th:text="${placeToBook.meanReview}"></span></td>
+            <td><span th:text="${placeToBook.NRooms}"></span></td>
+            <td><span th:text="${placeToBook.NBathroom}"></span></td>
+            <td><span th:text="${placeToBook.price}"></span></td>
+            <td><span th:text="${placeToBook.NKitchen}"></span></td>
+            <td><span th:text="${placeToBook.NLivingRooms}"></span></td>
+            <td><span th:text="${placeToBook.reservationStatus}"></span></td>
+            <td><span th:text="${placeToBook.host.idHost}"></span></td>
+            <td><span th:text="${placeToBook.place.idPlace}"></span></td>
+        </tr>
+    </table>
+</th:block>
+
+<!-- Se a lista de places estiver vazia, exibe uma mensagem -->
+<div th:if="${#lists.isEmpty(placeToBooks)}">
+    <p>No placeToBookFound found.</p>
+</div>
+
+
+</body>
+</html>

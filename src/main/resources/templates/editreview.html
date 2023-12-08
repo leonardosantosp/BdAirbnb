@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{main.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Edit Review</title>
+</head>
+<body>
+<header>
+    <a href="reports.html">
+        <div class="menuButton">
+            <img th:src="@{R.png}" alt="Logo">
+            <span>bnb</span>
+        </div>
+    </a>
+    <h1 class="newUserHead">Edit Review</h1>
+</header>
+<main>
+    <table class="searchPlaceToBook">
+        <tr>
+            <th>Id Review</th>
+            <th>Review Value</th>
+            <th>Text Review</th>
+            <th>IdPlaceToBook</th>
+            <th>IdGuest</th>
+        </tr>
+        <tr th:object="${review}" >
+            <td><span th:text="${review.idReview}"></span></td>
+            <td><span th:text="${review.reviewValue}"></span></td>
+            <td><span th:text="${review.textReview}"></span></td>
+            <td><span th:text="${review.placeToBook.idPlaceToBook}"></span></td>
+            <td><span th:text="${review.guest.idGuest}"></span></td>
+        </tr>
+    </table>
+    <form class="containerSearchPlaceToBook" th:action="@{'/editreview/' + ${review.idReview}}" th:object="${review}" method="post">
+        <label>
+            Text Review:
+            <input type="text" id="textReview" th:field="*{textReview}"/>
+        </label>
+        <button>Edit</button>
+    </form>
+</main>
+</body>
+</html>

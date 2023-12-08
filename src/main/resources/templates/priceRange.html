@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Price Range</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Range</title>
+</head>
+<body>
+
+<h1>Reserved Places By Capacity</h1>
+
+<!-- Formulário de busca -->
+<form action="/pricerange" method="get">
+    <label for="minvalue">MinValue:</label>
+    <input type="number" id="minvalue" name="minvalue" required>
+    <label for="maxvalue">MaxValue:</label>
+    <input type="number" id="maxvalue" name="maxvalue" required>
+    <button type="submit">Search</button>
+</form>
+
+<!--&lt;!&ndash; Formulário de busca &ndash;&gt;-->
+<!--<form action="/reserved-places" method="get">-->
+<!--    <label for="minCapacity">Capacity:</label>-->
+<!--    <input type="number" id="minCapacity" name="minCapacity" required>-->
+<!--    <button type="submit">Search</button>-->
+<!--</form>-->
+
+
+<!-- Resultados da busca -->
+<h2>Results</h2>
+
+
+<table>
+    <tr>
+        <th>#</th>
+        <th>Capacity</th>
+        <th>MeanReview</th>
+        <th>NRooms</th>
+        <th>NBathroom</th>
+        <th>Price</th>
+        <th>NKitchen</th>
+        <th>NLivingRooms</th>
+        <th>ReservationStatus</th>
+        <th>Host id</th>
+        <th>Place id</th>
+        <th>Name</th>
+    </tr>
+    <tr th:each="placeToBook : ${placeToBooks}"> <!-- O each serve para mostrar todos os hosts-->
+        <td><span th:text="${placeToBook.idPlaceToBook}"></span></td>
+        <td><span th:text="${placeToBook.capacity}"></span></td>
+        <td><span th:text="${placeToBook.meanReview}"></span></td>
+        <td><span th:text="${placeToBook.NRooms}"></span></td>
+        <td><span th:text="${placeToBook.NBathroom}"></span></td>
+        <td><span th:text="${placeToBook.price}"></span></td>
+        <td><span th:text="${placeToBook.NKitchen}"></span></td>
+        <td><span th:text="${placeToBook.NLivingRooms}"></span></td>
+        <td><span th:text="${placeToBook.reservationStatus}"></span></td>
+        <td><span th:text="${placeToBook.host.idHost}"></span></td>
+        <td><span th:text="${placeToBook.place.idPlace}"></span></td>
+        <td><span th:text="${placeToBook.host.user.name}"></span></td>
+    </tr>
+</table>
+
+</body>
+</html>

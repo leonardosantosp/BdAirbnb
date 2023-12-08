@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Place</title>
+</head>
+<body>
+<header>
+    <h1>Show Place</h1>
+</header>
+<main>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Address</th>
+            <th>City</th>
+        </tr>
+        <tr th:object="${place}" >
+            <td><span th:text="${place.idPlace}"></span></td>
+            <td><span th:text="${place.state}"></span></td>
+            <td><span th:text="${place.country}"></span></td>
+            <td><span th:text="${place.address}"></span></td>
+            <td><span th:text="${place.city}"></span></td>
+        </tr>
+    </table>
+</main>
+</body>
+</html>
