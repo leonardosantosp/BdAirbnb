@@ -16,8 +16,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.List;
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class UserServiceTest {
@@ -117,7 +118,6 @@ public class UserServiceTest {
     @DisplayName("#editUser > When the User exists > Return the changed user and store the changes in the database")
     void editUserWhenTheUserExistsReturnTheChangedUserAndStoreTheChangesInTheDatabase(){
 
-        // Arrange
         Integer userId = 1;
         User existingUser = new User(userId, "Leandro", "leandro@email.com", "leandro123", "123456789");
         User newUser = new User(userId,"Leandro Novo Nome", "novoleandro@email.com", "novoleandro123", "987654321");
@@ -125,7 +125,6 @@ public class UserServiceTest {
         when(repository.findById(userId)).thenReturn(java.util.Optional.of(existingUser));
         when(repository.save(any())).thenAnswer(invocation -> invocation.getArgument(0));
 
-        // Act
         User updatedUser = service.editUser(userId, newUser);
 
         Assertions.assertAll(
@@ -150,4 +149,94 @@ public class UserServiceTest {
                 service.editUser(userId, newUser));
 
     }
+
+    @Test
+    @DisplayName("#searchUser > When user attributes are not null and user exists > Return a list of users")
+    void searchUserWhenUserAttributesAreNotNullAndUserExistsReturnAListOfUsers() {
+        when(repository.findUserBy("Leandro","leandro@email.com","123456789")).thenReturn(List.of(User.builder()
+                .idUser(1)
+                .name("Leandro")
+                .email("leandro@email.com")
+                .password("leandro321")
+                .phoneNumber("123456789")
+                .build()));
+        List<User> response = service.searchUser("Leandro","leandro@email.com","123456789");
+        Assertions.assertAll(
+                () -> Assertions.assertEquals("Leandro",response.get(0).getName()),
+                () -> Assertions.assertEquals("leandro@email.com",response.get(0).getEmail()),
+                () -> Assertions.assertEquals("leandro321",response.get(0).getPassword()),
+                () -> Assertions.assertEquals("123456789",response.get(0).getPhoneNumber())
+        );
+    }
+
+    @Test
+    @DisplayName("#autenticate > When user attributes are not null and user exists > Return true")
+    void autenticateWhenUserAttributesAreNotNullAndUserExistsReturnTrue() {
+        when(repository.findByEmailAndPassword("leandro@email.com", "leandro321")).thenReturn(User.builder()
+                .idUser(1)
+                .name("Leandro")
+                .email("leandro@email.com")
+                .password("leandro321")
+                .phoneNumber("123456789")
+                .build());
+
+        boolean authenticated = service.autenticate("leandro@email.com", "leandro321");
+
+        Assertions.assertTrue(authenticated);
+    }
+
+
+    @Test
+    @DisplayName("#autenticate > When user credentials are invalids > Return false")
+    void autenticateWhenUserCredentialsAreInvalidsReturnFalse() {
+        when(repository.findByEmailAndPassword("invalido@email.com", "senhaerrada"))
+                .thenReturn(null);
+
+        boolean authenticated = service.autenticate("invalido@email.com", "senhaerrada");
+
+        Assertions.assertFalse(authenticated);
+    }
+
+    @Test
+    @DisplayName("#autenticate > When email is null > Throw an exception")
+    void autenticateWhenEmailIsNullThrowAnException(){
+
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                service.autenticate(null,"senhaerrada")
+        );
+
+    }
+
+    @Test
+    @DisplayName("#autenticate > When password is null > Throw an exception")
+    void autenticateWhenPasswordIsNullThrowAnException(){
+
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                service.autenticate("invalido@email.com",null)
+        );
+    }
+    
+    @Test
+    @DisplayName("#deleteById > When the user id is valid > Delete the user")
+    void deleteByIdWhenTheUserIdIsValidDeleteTheUser(){
+        
+        int userId = 1;
+        service.deleteById(userId);
+        verify(repository,times(1)).deleteById(1);
+    }
+
+    @Test
+    @DisplayName("#deleteById > When the user id is not valid > Throw an exception")
+    void deleteByIdWhenTheUserIdIsNotValidThrowAnException(){
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                service.deleteById(null)
+        );
+
+    }
+
+
+
+
+
+
 }

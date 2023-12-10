@@ -1,6 +1,7 @@
 package com.example.airbnb.unit;
 
 import com.example.airbnb.entity.Place;
+import com.example.airbnb.entity.User;
 import com.example.airbnb.exception.InvalidPlaceException;
 import com.example.airbnb.exception.PlaceNotFoundException;
 import com.example.airbnb.repository.PlaceRepository;
@@ -17,7 +18,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class PlaceServiceTest {
@@ -153,5 +154,42 @@ public class PlaceServiceTest {
 
         Assertions.assertThrows(PlaceNotFoundException.class, () ->
                 service.editPlace(placeId, place));
+    }
+
+    @Test
+    @DisplayName("#searchPlace > When user attributes are not null and place exists > Return a list of places")
+    void searchUserWhenUserAttributesAreNotNullAndPlaceExistsReturnAListOfPlaces() {
+        when(repository.findPlaceBy("Minas Gearis","Brasil","Governador Valadares")).thenReturn(List.of(Place.builder()
+                .idPlace(1)
+                .state("Minas Gerais")
+                .city("Governador Valadares")
+                .address("Rua dos bobos, 0")
+                .country("Brasil")
+                .build()));
+        List<Place> response = service.searchPlace("Minas Gearis","Brasil","Governador Valadares");
+        Assertions.assertAll(
+                () -> Assertions.assertEquals(1,response.get(0).getIdPlace()),
+                () -> Assertions.assertEquals("Minas Gerais",response.get(0).getState()),
+                () -> Assertions.assertEquals("Governador Valadares",response.get(0).getCity()),
+                () -> Assertions.assertEquals("Rua dos bobos, 0",response.get(0).getAddress()),
+                () -> Assertions.assertEquals("Brasil",response.get(0).getCountry())
+        );
+    }
+
+    @Test
+    @DisplayName("#deleteById > When the place id is valid > Delete the place")
+    void deleteByIdWhenThePlaceIdIsValidDeleteThePlace(){
+        int placeId = 1;
+        service.deleteById(placeId);
+        verify(repository,times(1)).deleteById(1);
+    }
+
+    @Test
+    @DisplayName("#deleteById > When the place id is not valid > Throw an exception")
+    void deleteByIdWhenThePlaceIdIsNotValidThrowAnException(){
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                service.deleteById(null)
+        );
+
     }
 }

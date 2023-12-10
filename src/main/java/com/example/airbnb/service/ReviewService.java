@@ -6,6 +6,7 @@ import com.example.airbnb.entity.Review;
 import com.example.airbnb.exception.InvalidHostException;
 import com.example.airbnb.exception.InvalidReviewException;
 import com.example.airbnb.exception.PlaceNotFoundException;
+import com.example.airbnb.exception.ReviewNotFoundException;
 import com.example.airbnb.repository.HostRepository;
 import com.example.airbnb.repository.PlaceToBookRepository;
 import com.example.airbnb.repository.ReviewRepository;
@@ -31,7 +32,7 @@ public class ReviewService {
                 || Objects.isNull(review.getTextReview())
                 || Objects.isNull(review.getPlaceToBook())
                 || Objects.isNull(review.getGuest())){
-            throw new InvalidHostException("Erro ao cadastrar a review!");
+            throw new InvalidReviewException("Erro ao cadastrar a review!");
         }
 
         Review savedReview = repository.save(review);
@@ -73,12 +74,15 @@ public class ReviewService {
 
     public Review editReview(Integer id, Review newReview){
         Review existingReview = repository.findById(id)
-                .orElseThrow(() -> new PlaceNotFoundException("PlaceTobook não encontrado!"));
+                .orElseThrow(() -> new ReviewNotFoundException("PlaceTobook não encontrado!"));
         existingReview.setTextReview(newReview.getTextReview());
         return repository.save(existingReview);
     }
 
     public void deleteById(Integer id) {
+        if (Objects.isNull(id)){
+            throw new IllegalArgumentException("Id null when fetching for an user.");
+        }
         repository.deleteById(id);
     }
 

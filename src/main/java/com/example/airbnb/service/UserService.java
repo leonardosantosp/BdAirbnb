@@ -73,6 +73,10 @@ public class UserService {
     }
 
     public void deleteById(Integer id) {
+
+        if (Objects.isNull(id)){
+            throw new IllegalArgumentException("Id null when fetching for an user.");
+        }
         repository.deleteById(id);
     }
 

@@ -59,6 +59,9 @@ public class PlaceService {
     }
 
     public void deleteById(Integer id) {
+        if (Objects.isNull(id)){
+            throw new IllegalArgumentException("Id null when fetching for an place.");
+        }
         repository.deleteById(id);
     }
 
