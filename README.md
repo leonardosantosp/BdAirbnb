@@ -1,7 +1,5 @@
 # BdAirbnb 🚀
 
-[![GitHub](https://img.shields.io/badge/GitHub-Projeto-blue?style=flat&logo=github)](https://github.com/seu-usuario/seu-projeto)
-
 <h2>Entity Relationship model for the database</h2><br> 
 <br>
 
@@ -67,7 +65,18 @@ O sistema é projetado para ser funcional e escalável, com foco em uma arquitet
 
 ---
 
-## Instalação 🛠️
+## Colaboradores 🤝
+
+Agradecimentos aos colaboradores que participaram do projeto:
+
+- Leandro Cesar de Souza Filho - https://github.com/LeandroCesarFilho
+- Leonardo dos Santos Paiva - https://github.com/leonardosantosp
+- Pedro Ywao Fugimoto - https://github.com/YwaoFugimoto
+- Ryan Ludieri Vieira Evangelista - https://github.com/RyanLudieri
+
+---
+
+## Instalação 🛠️ 
 
 Siga os passos abaixo para instalar e executar o projeto localmente:
 
