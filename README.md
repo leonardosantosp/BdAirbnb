@@ -8,7 +8,7 @@
 <h2>Relational model for the database</h2><br>
 <br>
 
-![image](https://github.com/leonardosantosp/BdAirbnb/blob/main/MR.png)<br>
+![image](https://github.com/leonardosantosp/BdAirbnb/blob/airBnb/MR.png)<br>
 
 
 Este projeto é uma plataforma inspirada no Airbnb, desenvolvida com o framework Spring Boot. Seu propósito é criar um sistema completo para gerenciar locações de propriedades, permitindo que anfitriões (hosts) anunciem suas acomodações, enquanto hóspedes (guests) podem buscar, reservar e avaliar os locais disponíveis.
